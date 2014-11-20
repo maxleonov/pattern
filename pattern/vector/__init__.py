@@ -1641,7 +1641,7 @@ class LSA(object):
         #print(numpy.dot(u, numpy.dot(numpy.diag(sigma), vt)))
         # Apply dimension reduction.
         # The maximum length of a concept vector = the number of documents.
-        assert k < len(model.documents), \
+        assert k <= len(model.documents), \
             "can't create more dimensions than there are documents"
         tail = lambda list, i: range(len(list)-i, len(list))
         u, sigma, vt = (
